@@ -1,6 +1,5 @@
 package clustering.algorithm;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -30,16 +29,18 @@ public class Centroid implements Point {
         return Math.sqrt(Math.pow( (p2.getY() - p1.getY()) , 2 ) + Math.pow( (p2.getX() - p1.getX()) , 2 ));
     }
 
-    public static Centroid calculateCentroid(Cluster cluster) {
+    public static Centroid calculateCentroid(Cluster cluster) throws DivisionByZeroException {
         int sumPointsX = 0;
         int sumPointsY = 0;
-        int pointsCount = (cluster.getPoints().size() > 0) ? cluster.getPoints().size() : 1;
+        int clusterSize = 0;
         for(Datapoint point : cluster.getPoints()) {
             sumPointsX += point.getX();
             sumPointsY += point.getY();
         }
-
-        return new Centroid( (sumPointsX / pointsCount) , (sumPointsY / pointsCount));
+        
+        if(cluster.getPoints().size() == 0 && sumPointsX > 0) throw new DivisionByZeroException("cluster " + cluster.getIndex());
+        else clusterSize = 1;
+        return new Centroid( (sumPointsX / clusterSize) , (sumPointsY / clusterSize)) ;
     }
 
     public static Centroid randomPoint(int minX, int minY, int maxX, int maxY) {

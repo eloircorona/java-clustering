@@ -31,7 +31,7 @@ public class Cluster {
     public void clearCluster() { points.clear(); }
 
     public String toString() {
-        return "-----\nCluster " + getIndex() + "\nCentroide (" + centroid.getX() + "," + centroid.getY() + ")\nPuntos: " + points.size();
+        return "-----\nCluster " + getIndex() + "\nCentroide (" + centroid.getX() + "," + centroid.getY() + ")";
     }
 
     public String pointsToString() {

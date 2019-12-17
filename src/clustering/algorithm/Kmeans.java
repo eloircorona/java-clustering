@@ -40,7 +40,7 @@ public class Kmeans extends PointAssignment {
 
     public int getMaxGenerations() { return maxGenerations; }
 
-    public void initialize() {
+    public void initialize() throws DivisionByZeroException {
         history = new ArrayList<>();
 
         if(randomClusters) createRandomClusters();
@@ -108,7 +108,7 @@ public class Kmeans extends PointAssignment {
         }
     }
 
-    public void calculateClustersCentroids() {
+    public void calculateClustersCentroids() throws DivisionByZeroException {
         for(int i = 0; i < getK(); i++) {
             Cluster _cluster = getClusters().get(i);
             _cluster.setCentroid(Centroid.calculateCentroid(_cluster));

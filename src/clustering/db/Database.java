@@ -11,7 +11,6 @@ public class Database {
 		ArrayList<Integer> result = new ArrayList<>(); 
 		BufferedReader br = null;
 		try {
-			int inicio = 0;
 			br = new BufferedReader(new FileReader(src));
 			String line = br.readLine();
 
