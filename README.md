@@ -15,4 +15,4 @@ No corrections anymore
 
 
 ## Project Documentation
-[Read the UML Diagram, objective and conclusion of the project] : (https://github.com/eloircorona/java-clustering/blob/master/Documentation.pdf)
+[Read the UML Diagram, objective and conclusion of the project](https://github.com/eloircorona/java-clustering/blob/master/Documentation.pdf)
